@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: ITCBauhaus;
+    src: url("./fonts/BauhausStd-Medium.ttf");
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body,html {
+    display: flex;
+    flex-direction: column;
+    background-image: url("./images/bgImg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#compLogo {
+    width: 100px;
+    height: 30px;
+    margin-top: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: #25304b;
+}
+
+.navbar {
+    display: flex;
+    font-size: 14px;
+    padding-top: 6px;
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'Poppins';
+    background-color: #EBF4FA;
+    border-bottom: 1px solid #daf1ff;
+}
+
+.navbar:hover {
+    background-color: white;
+}
+
+.header-links {
+    width: 400px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-links:hover {
+    cursor: pointer;
+}
+
+.login-button {
+    width: 50px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+}
+
+.login-button:hover {
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    margin-left: 4px;
+}
+
+.btn-wrapper {
+    display: flex;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 2px;
+    background-color: #dae9f8;
+    justify-content: center;
+    align-items: center;
+}
+
+#tagline {
+    font-family: ITCBauhaus;
+    font-weight: normal;
+    color: #25304b;
+    display: block;
+    margin-top: 3.5rem;
+    margin-left: 2.5em;
+}
+
+#travel-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    position: relative; 
+    width: 100%;
+    height: 350px; 
+  }
+  
+.flight-hotel-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+    width: 1100px;
+    height: 275px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+}
+
+.book-top-buttons {
+    display: flex;
+    height: 50px;
+}
+
+#bookFlight {
+    width: 50%;
+    height: 40px;
+    border: none;
+    background-color: #000099;
+    color: white;
+    font-size: 16px;
+    font-family: "Poppins";
+    border-top-left-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bookFlight:hover {
+    cursor: pointer;
+}
+
+#bookHotel {
+    width: 50%;
+    height: 40px;
+    border: none;
+    background-color: #eff2f4a3;
+    color: #4b5772;
+    font-size: 16px;
+    font-family: "Poppins";
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+#bookHotel:hover {
+    cursor: pointer;
+}
+
+#Flight{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+#Hotel {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.trip-radio-grp {
+    position: relative;
+    left: 30px;
+}
+
+input[type="radio"] {
+    accent-color: #009;
+    vertical-align: middle;
+}
+
+input[type="radio"]:hover {
+    cursor: pointer;
+}
+
+label[for="Trip"] {
+    margin-right: 20px;
+    font-family: "Poppins";
+    font-size: 14px;
+}
+
+#whatNew {
+    margin-left: 5em;
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: "Poppins";
+    color: #757c8a;
+    font-weight: normal;
+}
+
+#offers {
+    margin-left: 2.5em;
+    display: block;
+    margin-top: 15px;
+    font-size: 32px;
+    font-family: ITCBauhaus;
+}
+
+.promoSearch {
+    justify-content: center;
+    align-items: center;
+    margin-top: 153px;
+    margin-left: 630px;
+    position: relative;
+    top: -150px;
+    left: 115px;
+}
+
+#searchFlight {
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #000099;
+    color: white;
+    font-family: "Poppins";
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+#searchFlight:hover {
+    cursor: pointer;
+}
+#promoCode {
+    width: 170px;
+    height: 25px;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    color: #000099;
+    font-family: "Poppins";
+}
+
+#promoCode:hover {
+    cursor: pointer;
+}
+
+.currency-picker {
+    display: inline;
+    padding: 6px 12px 6px 12px;
+    color: #000099;
+    font-size: 16px;
+    font-family: "Poppins";
+    border: 1px solid #daf1ff;
+    border-radius: 10px;
+    position: relative;
+    left: 655px;
+}
+
+.top-form {
+    margin-top: 16px;
+}
+
+.currency-picker:hover {
+    border: 2px solid #daf1ff;
+    cursor: pointer;
+}
+
+.symbol {
+    margin-right: 2px;
+}
+
+.down-arrow {
+    margin-left: 2px;
+}
+
+.im-travelling-for {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Poppins;
+    font-size: 16px;
+    color: #25304b;
+    width: 290px;
+    height: 40px;
+    border: 1px solid #dae9f8;
+    border-radius: 13px;
+    padding-left: 10px;
+    position: relative;
+    top: 40px;
+    left: 25px;
+}
+
+.travel-blank-wrapper {
+    display: flex;
+    width: 140px;
+    height: 40px;
+    justify-content: center;
+    border: none;
+}
+
+.travel-blank {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 8px;
+}
+
+.travel-blank-wrapper:hover {
+    border: 2px solid #daf1ff;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.travelchoose {
+    padding-right: 10px;
+}
+
+.dotted {
+    position: relative;
+    left: 15px;
+    padding-top: 10px;
+    color: #bcc2cf;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1050px;
+    border: 1px solid #dae9f8;
+    border-radius: 10px;
+    position: relative;
+    left: 25px;
+    top: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 25px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
+    border: 1px solid #dae9f8; 
+    height: 25px;
+}
+
+.grid-item:hover {
+    transform: scale(1.1);
+    border: 1px solid #daf1ff; 
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.item1 {
+    border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.item2 {
+    border-left: none;
+}
+
+.item5 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.label-top {
+    font-size: 10px;
+    position: relative;
+    top: -20px;
+    left: -15px;
+    font-family: Poppins;
+    color: #7a85a0;
+    font-weight: 400;
+}
+
+/*.dArrow {
+    color: #bcc2cf;
+    position: relative;
+    bottom: 18px;
+    left: 50px;
+} */
+
+#new-offer {
+    top: 300px;
+    right: 20px;
+}
+
+.formFields {
+    position: relative;
+    bottom: 15px;
+    border: none;
+    height: 25px;
+    padding-left: 10px;
+}
+
+.formFields:focus {
+    outline: none;
+    border: none;
+}
+
+#travelOpt {
+    border: none;
+    width: 100px;
+    font-size: 16px;
+    font-family: Poppins;
+    color: #25304b;
+}
+
+#travelOpt:hover {
+    cursor: pointer;
+}
+
+#travelOpt:focus {
+    border: none;
+    outline: none;
+}
+
+input[type="date"] {
+    font-family: Poppins;
+    font-weight: normal;
+}
+
+#currencyOpt {
+    border: none;
+    font-size: 16px;
+    font-family: Poppins;
+    color: #25304b;
+}
+
+#curencyOpt:hover {
+    cursor: pointer;
+}
+
+#currencyOpt:focus {
+    border: none;
+    outline: none;
+}
+
+/* Error Popup CSS */
+.error-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.error-popup p {
+    margin: 0;
+}
+
+#gallery {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgGallery {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    padding: 5px;
+    height: 14em;
+    scale: 5.2;
+    margin-top: 43.5rem;
+}
+
+.top-img {
+    width: 100%;
+}
+
+#topImg {
+    width: 100%;
+    border-radius: 10px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.adRewardImages {
+    width: 49%;
+    display: flex;
+    gap: 5px;
+}
+
+.adrev {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    image-rendering: crisp-edges;
+}
+
+.secondLayer {
+    width: 50%;
+}
+
+.bottomImg {
+    margin-top: 0.3rem;
+    width: 105px;
+    height: 65px;
+    border-radius: 10px;
+}
+
+.bottomContainer {
+    width: 100%;
+}
+
+#sideimage {
+    float: right;
+    border-radius: 10px;
+    height: 120px;
+    width: 95px;
+    position: relative;
+    bottom: 124px;
+    object-fit: cover;
+}
+
