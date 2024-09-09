@@ -13,128 +13,178 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <a href="#" id="logo"><img src="./images/logo.png" alt="Logo" id="compLogo"></a>
-            <div class="header-links">
-                <a href="">Book <i class="fa-solid fa-angle-down"></i></a>
-                <a href="">Trips <i class="fa-solid fa-angle-down"></i></a>
-                <a href="">Check-in</a>
-                <a href="">6E Rewards</a>
-            </div>
-            <div class="btn-wrapper">
-                <button class="login-button">Login</button>
-                <span class="dropdown-icon"><i class="fa-solid fa-angle-down"></i></span>
-            </div>
-        </div>
-    </header>
-    <h1 id="tagline">Hi there, where would you like to <span style="color: #209326;">IndiGo</span> today?</h1>
-    <div id="errorListContainer" class="error-list-container">
-        <ul id="errorList"></ul>
-    </div>
-    <section id="travel-form">
-        <div class="form-wrapper">
-            <div class="flight-hotel-form">
-                <div class="book-top-buttons">
-                    <button id="bookFlight"><img src="./images/flight.png" alt="flight logo" id="Flight">Book a
-                        flight</button>
-                    <button id="bookHotel"><img src="./images/hotel.png" alt="hotel logo" id="Hotel">Book a
-                        hotel</button>
+    <div id="mainContent">
+        <header id="myHeader">
+            <div class="navbar">
+                <a href="#" id="logo"><img src="./images/logo.png" alt="IndiGo Airlines Logo" id="compLogo"></a>
+                <div class="header-links">
+                    <a href="">Book <i class="fa-solid fa-angle-down"></i></a>
+                    <a href="">Trips <i class="fa-solid fa-angle-down"></i></a>
+                    <a href="">Check-in</a>
+                    <a href="">6E Rewards</a>
                 </div>
-                <form id="bookingForm">
-                    <div class="top-form">
-                        <span class="trip-radio-grp">
-                            <input type="radio" name="Trip" id="oneWay" checked />
-                            <label for="Trip">One Way</label>
-                            <input type="radio" name="Trip" id="roundTrip" />
-                            <label for="Trip">Round Trip</label>
-                            <input type="radio" name="Trip" id="multiCity" />
-                            <label for="Trip">Multi City</label>
-                        </span>
-                        <div class="currency-picker">
-                            <!--<span class="symbol">₹</span>
+                <div class="btn-wrapper">
+                    <button class="login-button">Login</button>
+                    <span class="dropdown-icon"><i class="fa-solid fa-angle-down"></i></span>
+                </div>
+            </div>
+        </header>
+        <div id="NavLink">
+            <a href="#myFooter" id="skipLink">Skip to Bottom <i class="fa-solid fa-angles-down"></i></a>
+        </div>
+        <h1 id="tagline">Hi there, where would you like to <span style="color: #209326;">IndiGo</span> today?</h1>
+        <div id="errorListContainer" class="error-list-container">
+            <ul id="errorList"></ul>
+        </div>
+        <section id="travel-form">
+            <div class="form-wrapper">
+                <div class="flight-hotel-form">
+                    <div class="book-top-buttons">
+                        <button id="bookFlight"><img src="./images/flight.png" alt="flight logo" id="Flight">Book a
+                            flight</button>
+                        <button id="bookHotel"><img src="./images/hotel.png" alt="hotel logo" id="Hotel">Book a
+                            hotel</button>
+                    </div>
+                    <form id="bookingForm">
+                        <div class="top-form">
+                            <span class="trip-radio-grp">
+                                <input type="radio" name="Trip" id="oneWay" checked />
+                                <label for="Trip">One Way</label>
+                                <input type="radio" name="Trip" id="roundTrip" tabindex="0"/>
+                                <label for="Trip">Round Trip</label>
+                                <input type="radio" name="Trip" id="multiCity" tabindex="0" />
+                                <label for="Trip">Multi City</label>
+                            </span>
+                            <div class="currency-picker">
+                                <!--<span class="symbol">₹</span>
                         INR<i class="fa-solid fa-angle-down down-arrow"></i>-->
-                            <select name="currencyOptions" id="currencyOpt">
-                                <option value="Inr">₹ INR</option>
-                                <option value="Usd">$ USD</option>
-                                <option value="Euro">€ EUR</option>
-                                <option value="Pounds">£ GBP</option>
-                                <option value="Yen">¥ YEN</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="grid-container">
-                        <div class="grid-item item1">
-                            <span class="label-top">From</span>
-                            <input type="text" name="from" placeholder="Eg: Delhi" class="formFields">
-                        </div>
-                        <div class="grid-item item2">
-                            <span class="label-top">To</span>
-                            <input type="text" name="to" placeholder="Eg: Mumbai" class="formFields">
-                        </div>
-                        <div class="grid-item">
-                            <span class="label-top">Departure</span>
-                            <input type="date" name="deptarture" class="formFields">
-                        </div>
-                        <div class="grid-item">
-                            <span class="label-top">Return</span>
-                            <input type="date" name="return" class="formFields">
-                        </div>
-                        <div class="grid-item item5">
-                            <span class="label-top">No. of passengers</span>
-                            <!--<i class="fa-solid fa-angle-down dArrow fa-xs"></i>-->
-                            <input type="number" name="passengerNo" class="formFields" placeholder="Eg: 3" min="1">
-                        </div>
-                    </div>
-                    <div class="im-travelling-for">
-                        I am travelling for
-                        <div class="travel-blank-wrapper">
-                            <div class="travel-blank">
-                                <!--<span class="dotted">................................</span>-->
-                                <select name="travelOptions" id="travelOpt">
-                                    <option value="" disabled selected></option>
-                                    <option value="Leisure">Leisure</option>
-                                    <option value="Work">Work</option>
-                                    <option value="Medical">Medical</option>
+                                <label for="currencyOpt">Currency:</label>
+                                <select name="currencyOptions" id="currencyOpt">
+                                    <option value="Inr">₹ INR</option>
+                                    <option value="Usd">$ USD</option>
+                                    <option value="Euro">€ EUR</option>
+                                    <option value="Pounds">£ GBP</option>
+                                    <option value="Yen">¥ YEN</option>
                                 </select>
-                                <!-- <i class="fa-solid fa-angle-down travelchoose"></i>-->
                             </div>
                         </div>
-                    </div>
-                    <div class="promoSearch">
-                        <div class="promo-search-wrapper">
-                            <button id="promoCode">+ <u>ADD PROMOCODE</u></button>
-                            <button id="searchFlight" type="submit">Search</button>
+                        <div class="grid-container">
+                            <div class="grid-item item1">
+                                <span class="label-top">From</span>
+                                <input type="text" name="from" placeholder="Eg: Delhi" class="formFields">
+                            </div>
+                            <div class="grid-item item2">
+                                <span class="label-top">To</span>
+                                <input type="text" name="to" placeholder="Eg: Mumbai" class="formFields">
+                            </div>
+                            <div class="grid-item">
+                                <span class="label-top">Departure</span>
+                                <input type="date" name="deptarture" class="formFields">
+                            </div>
+                            <div class="grid-item">
+                                <span class="label-top">Return</span>
+                                <input type="date" name="return" class="formFields">
+                            </div>
+                            <div class="grid-item item5">
+                                <span class="label-top">No. of passengers</span>
+                                <!--<i class="fa-solid fa-angle-down dArrow fa-xs"></i>-->
+                                <input type="number" name="passengerNo" class="formFields" placeholder="Eg: 3" min="1">
+                            </div>
                         </div>
+                        <div class="im-travelling-for">
+                            I am travelling for
+                            <div class="travel-blank-wrapper">
+                                <div class="travel-blank">
+                                    <!--<span class="dotted">................................</span>-->
+                                    <select name="travelOptions" id="travelOpt">
+                                        <option value="" disabled selected></option>
+                                        <option value="Leisure">Leisure</option>
+                                        <option value="Work">Work</option>
+                                        <option value="Medical">Medical</option>
+                                    </select>
+                                    <!-- <i class="fa-solid fa-angle-down travelchoose"></i>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promoSearch">
+                            <div class="promo-search-wrapper">
+                                <button id="promoCode">+ <u>ADD PROMOCODE</u></button>
+                                <button id="searchFlight" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="new-offer">
+            <h2 id="whatNew">What's new?</h2>
+            <p id="offers">Find <span style="color: #209326;">exclusive offers</span> and the best deals available for
+                you.
+            </p>
+        </section>
+        <section id="gallery">
+            <div class="imgGallery">
+                <div class="top-img">
+                    <img src="/images/dubai.jpg" id="topImg">
+                </div>
+                <div class="secondLayer">
+                    <div class="adRewardImages">
+                        <img src="/images/tree1.png" class="adrev" width="105px" height="103px">
+                        <img src="/images/mountain.jpg" class="adrev" width="105px" height="103px">
                     </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    <section id="new-offer">
-        <h2 id="whatNew">What's new?</h2>
-        <p id="offers">Find <span style="color: #209326;">exclusive offers</span> and the best deals available for you.
-        </p>
-    </section>
-    <section id="gallery">
-        <div class="imgGallery">
-            <div class="top-img">
-                <img src="/images/dubai.jpg" id="topImg">
-            </div>
-            <div class="secondLayer">
-                <div class="adRewardImages">
-                    <img src="/images/tree1.png" class="adrev" width="105px" height="103px">
-                    <img src="/images/mountain.jpg" class="adrev" width="105px" height="103px">
+                    <div class="botomContainer">
+                        <img src="/images/people.jpg" class="bottomImg">
+                    </div>
                 </div>
-                <div class="botomContainer">
-                    <img src="/images/people.jpg" class="bottomImg">
+                <div class="sideImg">
+                    <img src="/images/travel.jpg" id="sideimage">
                 </div>
             </div>
-            <div class="sideImg">
-                <img src="/images/travel.jpg" id="sideimage">
-            </div>
+        </section>
+        <section id="belowSection">
+            <pre id="embark">
+                         Embark on a journey of
+                         inspiration with IndiGo, where
+                         <span style="color: #209326;">discovery meets sky.</span>
+
+                         Travel to your dream destination 
+                         hassle-free.
+                         <input type="button" value="Explore" id="exploreBtn" onclick="window.open('index2.html', '_blank')">
+        </pre>
+        </section>
+        <video src="/videos/plane.mp4" controls loop autoplay id="planeVideo"></video>
+    </div>
+    <!--accordion-->
+    <div class="accordion" role="region" aria-labelledby="faqSec">
+        <h1 id="faqSec">FAQ's</h1>
+        <details aria-expanded="false">
+            <summary tabindex="0">What items aren't permitted on an IndiGo flight?</summary>
+            <p>Items such as: flammable substances, liquids, alcohol, weapons/sharp objects, food aren't allowed on flight.</p>
+        </details>
+        <details aria-expanded="false">
+            <summary tabindex="0">Can I request special assistance at the airport?</summary>
+            <p>Yes, special assistance can be requested at the time of booking or by contacting our customer service. We provide support for passengers with reduced mobility, special needs, and other requirements.</p>
+        </details>
+        <details aria-expanded="false">
+            <summary tabindex="0">What should I do if I lose my luggage?</summary>
+            <p>If you lose your luggage, please report it to our baggage services desk at the airport. You can also file a claim through our website or contact our customer service for assistance.</p>
+        </details>
+    </div>
+    <div id="NavLink">
+        <a href="#myHeader" id="skipLink">Skip to Top <i class="fa-solid fa-angles-up"></i></a>
+    </div>
+    <footer id="myFooter">
+
+    </footer>     
+    <!--modal-->
+    <div id="welcomeModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn" aria-label="Close modal">&times;</button>
+            <h2 id="modalTitle">Welcome!</h2>
+            <p id="modalText">Your go-to airlines to travel around the world!</p>
+            <button id="modalBtn">Explore Offers!</button>
         </div>
-    </section>
+    </div>
     <script src="script.js"></script>
 </body>
 
