@@ -4,6 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorListContainer = document.getElementById('errorListContainer');
     const errorList = document.getElementById('errorList');
 
+    const modal = document.getElementById("welcomeModal");
+    const closeModalBtn = document.getElementById("closeModal");
+    const modalContent = document.querySelector(".modal-content");
+    const mainContent = document.getElementById("mainContent");
+
+    const openModal = () => {
+        modal.style.display = "flex"; 
+        mainContent.classList.add("blur"); 
+        closeModalBtn.focus(); 
+    };
+
+    const closeModal = () => {
+        modal.style.display = "none"; 
+        mainContent.classList.remove("blur"); 
+    };
+
+    setTimeout(openModal, 3000);
+
+    closeModalBtn.addEventListener("click", closeModal);
+
     searchButton.addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -44,4 +64,41 @@ document.addEventListener("DOMContentLoaded", function () {
             bookingForm.submit();
         }
     });
+
+    window.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
+
+     modal.addEventListener("click", function (e) {
+        if (!modalContent.contains(e.target)) {
+            closeModal();
+        }
+    });
+
+     modal.addEventListener("keydown", function (e) {
+        const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.key === 'Tab') {
+            if (e.shiftKey) { 
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else { 
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        }
+    });
+
+    document.getElementById('modalBtn').addEventListener('click', function() {
+        window.location.href = 'index2.html';
+      });
+
 });
