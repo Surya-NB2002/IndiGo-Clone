@@ -201,7 +201,7 @@ input[type="radio"]:hover {
     cursor: pointer;
 }
 
-label[for="Trip"] {
+.radio-label {
     margin-right: 20px;
     font-family: "Poppins";
     font-size: 14px;
@@ -213,7 +213,7 @@ label[for="Trip"] {
     margin-top: 10px;
     font-size: 16px;
     font-family: "Poppins";
-    color: #757c8a;
+    color: black;
     font-weight: normal;
 }
 
@@ -385,12 +385,12 @@ label[for="Trip"] {
 }
 
 .label-top {
-    font-size: 10px;
+    font-size: 12px;
     position: relative;
     top: -20px;
     left: -15px;
     font-family: Poppins;
-    color: #7a85a0;
+    color: black;
     font-weight: 400;
 }
 
