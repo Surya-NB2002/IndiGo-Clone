@@ -112,7 +112,7 @@
                             </div>
                             <div class="promoSearch">
                                 <div class="promo-search-wrapper">
-                                    <button id="promoCode">+ <u>ADD PROMOCODE</u></button>
+                                    <a href="#" id="promoCode" role="button" aria-controls="welcomeModal">+ <u>ADD PROMOCODE</u></a>
                                     <button id="searchFlight" type="submit">Search</button>
                                 </div>
                             </div>
@@ -191,9 +191,10 @@
     <div id="welcomeModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-content">
             <button id="closeModal" class="close-btn" aria-label="Close modal">&times;</button>
-            <h2 id="modalTitle">Welcome!</h2>
-            <p id="modalText">Your go-to airlines to travel around the world!</p>
-            <button id="modalBtn">Explore Offers!</button>
+            <h2 id="modalTitle">Enter promocode</h2>
+            <label for="promoInput" id="promoLabel">Promo Code:</label>
+            <input type="text" id="promoInput" aria-labelledby="promoLabel" placeholder="Enter your code here">
+            <button id="submitPromoBtn">Submit</button>
         </div>
     </div>
     <script src="script.js"></script>
