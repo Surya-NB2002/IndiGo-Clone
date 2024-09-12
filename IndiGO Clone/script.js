@@ -6,24 +6,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const modal = document.getElementById("welcomeModal");
     const closeModalBtn = document.getElementById("closeModal");
-    const modalContent = document.querySelector(".modal-content");
+    const promoCodeLink = document.getElementById("promoCode");
+    const promoInput = document.getElementById("promoInput");
+    const submitPromoBtn = document.getElementById("submitPromoBtn");
     const mainContent = document.getElementById("mainContent");
+    const modalContent = document.querySelector(".modal-content");
 
+    // modal functionalities
     const openModal = () => {
-        modal.style.display = "flex"; 
-        mainContent.classList.add("blur"); 
-        closeModalBtn.focus(); 
+        modal.style.display = "flex";
+        mainContent.classList.add("blur");
+        promoInput.focus();
+        modal.setAttribute("aria-hidden", "false");
     };
 
     const closeModal = () => {
-        modal.style.display = "none"; 
-        mainContent.classList.remove("blur"); 
+        modal.style.display = "none";
+        mainContent.classList.remove("blur");
+        modal.setAttribute("aria-hidden", "true");
+        promoCodeLink.focus();
     };
 
-    setTimeout(openModal, 3000);
+    promoCodeLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal();
+    });
 
     closeModalBtn.addEventListener("click", closeModal);
 
+    // form validation functionality
     searchButton.addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -49,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (departure >= returnDate) messages.push('The departure date must be before the return date.');
         }
 
-        errorList.innerHTML = ''; 
+        errorList.innerHTML = '';
 
         if (messages.length > 0) {
             messages.forEach(message => {
@@ -57,48 +68,51 @@ document.addEventListener("DOMContentLoaded", function () {
                 li.textContent = message;
                 errorList.appendChild(li);
             });
-            errorListContainer.style.display = 'block'; 
+            errorListContainer.style.display = 'block';
         } else {
-            errorListContainer.style.display = 'none'; 
+            errorListContainer.style.display = 'none';
             alert("Form submitted successfully!");
             bookingForm.submit();
         }
     });
 
-    window.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-            closeModal();
-        }
-    });
-
-     modal.addEventListener("click", function (e) {
+    // modal functionalities contd.
+    modal.addEventListener("click", function (e) {
         if (!modalContent.contains(e.target)) {
             closeModal();
         }
     });
 
-     modal.addEventListener("keydown", function (e) {
+    submitPromoBtn.addEventListener("click", function () {
+        const promoCodeValue = promoInput.value.trim();
+        if (promoCodeValue) {
+            promoCodeLink.innerHTML = `<u>${promoCodeValue}</u>`;
+        }
+        closeModal();
+    });
+
+    modal.addEventListener("keydown", function (e) {
         const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
 
         if (e.key === 'Tab') {
-            if (e.shiftKey) { 
+            if (e.shiftKey) {
                 if (document.activeElement === firstElement) {
                     lastElement.focus();
                     e.preventDefault();
                 }
-            } else { 
+            } else {
                 if (document.activeElement === lastElement) {
                     firstElement.focus();
                     e.preventDefault();
                 }
             }
         }
-    });
 
-    document.getElementById('modalBtn').addEventListener('click', function() {
-        window.location.href = 'index2.html';
-      });
+        if (e.key === "Escape") {
+            closeModal();
+        }
+    });
 
 });
